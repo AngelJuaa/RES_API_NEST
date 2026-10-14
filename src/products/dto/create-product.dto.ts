@@ -7,9 +7,18 @@ name ! : string
 @IsString()
 @IsOptional()
 description? : string
-@IsNumber()
+// @IsNumber()
 
+@IsString()
+categoria? : string
+
+@IsNumber()
 @Type(()=>Number)
 price!: number;
+
+@IsNumber()
+@Type(()=>Number)
+stock!: number;
+
 
 }

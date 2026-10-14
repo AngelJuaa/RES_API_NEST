@@ -8,8 +8,8 @@ import {v4 as Uuidv4} from  'uuid';
 export class ProductsService {
   private products:Product[] = [];
   create(createProductDto: CreateProductDto) {
-    const {name, description,price}=createProductDto;
-    const newProduct = new Product(Uuidv4(),name,price,description);
+    const {name, description,price,stock,categoria}=createProductDto;
+    const newProduct = new Product(Uuidv4(),name,price,description,stock,categoria);
     this.products.push(newProduct);
     return newProduct;
 
@@ -29,9 +29,9 @@ export class ProductsService {
   }
 
   update(id: string, updateProductDto: UpdateProductDto) {
-  const {name,description,price} = updateProductDto;
+  const {name,description,price,stock,categoria} = updateProductDto;
   const product = this.findOne(id);
-  product.updateWith({name,description,price});
+  product.updateWith({name,description,price,stock,categoria});
   return product;
   }
 
